@@ -1,4 +1,4 @@
-name: CI-CD Puente Blanco Backend
+name: CI Backend
 
 on:
   push:
