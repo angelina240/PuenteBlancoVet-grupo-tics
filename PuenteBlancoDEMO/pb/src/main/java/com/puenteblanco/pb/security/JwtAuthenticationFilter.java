@@ -31,12 +31,15 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         String path = request.getServletPath();
 
-        // Ignorar rutas públicas que no requieren JWT
-        if (path.startsWith("/api/auth") || path.startsWith("/api/recovery") || path.startsWith("/api/reniec")) {
-            filterChain.doFilter(request, response);
-            return;
-        }
-
+      // Ignorar rutas públicas que no requieren JWT
+if (path.startsWith("/api/auth") || path.startsWith("/api/recovery") || path.startsWith("/api/reniec") 
+    || path.equals("/") || path.startsWith("/register") || path.startsWith("/login") 
+    || path.startsWith("/index.html") || path.startsWith("/css/") || path.startsWith("/js/") 
+    || path.startsWith("/img/") || path.startsWith("/images/") || path.startsWith("/webjars/")
+    || path.startsWith("/favicon.ico")) {
+    filterChain.doFilter(request, response);
+    return;
+}
         String jwt = extractToken(request);
 
         if (jwt != null) {
