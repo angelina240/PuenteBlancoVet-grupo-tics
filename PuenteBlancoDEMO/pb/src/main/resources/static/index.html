@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLIFARVET Puente Blanco</title>
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Icono de la pagina -->
+  <link rel="icon"
+    href="https://scontent.flim2-1.fna.fbcdn.net/v/t39.30808-6/472784097_1034431978701507_3701480566925006923_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=UyNR2TB0rbIQ7kNvwFl-qAC&_nc_oc=AdmrkWr4yrO5zpC7kixImfSABg9Vze7WwI7YvVpLWpRi7Xg1aZEOhMp1KpvriDPge0A&_nc_zt=23&_nc_ht=scontent.flim2-1.fna&_nc_gid=2i9FZaeSqjDNmmofhAXH8A&oh=00_AfMvdDtdWkGwuCf76a0DROCETTrt2k3l_jhGeMxuZJlqmw&oe=6856780B"
+    type="image/jpg" /> <!-- URL de la imagen -->
+
+  <!-- AOS Animate on Scroll CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
+</head>
+
+<body class="bg-gray-100 overflow-x-hidden">
+
+  <!-- Navbar Responsive -->
+  <header class="bg-teal-800 text-white px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Logo Puente Blanco"
+          class="h-10 w-10 rounded-full" />
+        <div>
+          <h1 class="text-xl font-bold leading-5">Puente Blanco</h1>
+          <p class="text-sm text-white">Clínica Veterinaria</p>
+        </div>
+      </div>
+
+      <!-- Botón Hamburguesa para móviles -->
+      <button id="nav-toggle" class="md:hidden text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Navegación (Desktop) -->
+      <nav class="hidden md:flex gap-3 items-center text-sm font-medium" id="nav-menu">
+        <a href="#" onclick="openLogin('CLIENT')"
+          class="flex items-center gap-2 bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700">
+          👤 Cliente
+        </a>
+        <a href="#" onclick="openLogin('VETERINARIAN')"
+          class="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-300">
+          🩺 Veterinario
+        </a>
+        <a href="#" onclick="openLogin('INTERN')"
+          class="flex items-center gap-2 bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-700">
+          👨‍⚕️ Practicante
+        </a>
+        <a href="#" onclick="openLogin('ADMIN')"
+          class="flex items-center gap-2 bg-blue-300 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+          🛡️ Administrador
+        </a>
+        <a href="#" onclick="toggleRegister()" class="text-white hover:text-blue-300">
+          Registrarse
+        </a>
+        <a href="#ubicacion" class="text-white hover:text-blue-300">
+          Contáctanos
+        </a>
+      </nav>
+    </div>
+
+    <!-- Menú desplegable (Mobile) -->
+    <div id="mobile-menu" class="md:hidden hidden mt-4 space-y-3 text-sm font-medium">
+      <a href="#" onclick="openLogin('CLIENT')"
+        class="block bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700">
+        👤 Cliente
+      </a>
+      <a href="#" onclick="openLogin('VETERINARIAN')"
+        class="block bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-300">
+        🩺 Veterinario
+      </a>
+      <a href="#" onclick="openLogin('INTERN')"
+        class="block bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-700">
+        👨‍⚕️ Practicante
+      </a>
+      <a href="#" onclick="openLogin('ADMIN')"
+        class="block bg-blue-300 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+        🛡️ Administrador
+      </a>
+      <a href="#" onclick="toggleRegister()" class="block text-white hover:text-blue-300">
+        Registrarse
+      </a>
+      <a href="#ubicacion" class="block text-white hover:text-blue-300">
+        Contáctanos
+      </a>
+    </div>
+  </header>
+
+<!--PORTADA-->
+  <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Imagen de fondo con capa oscura -->
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      style="background-image: url('img/perroguinando.jpg');">
+      <div class="absolute inset-0 bg-slate-900 bg-opacity-50"></div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+      
+
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
+        Clínica Farmacéutica
+        <span class="block text-yellow-400 font-extrabold">Puente Blanco</span>
+      </h1>
+      <!-- Tag Profesional de Especialidad -->
+      <div class="inline-flex items-center gap-3 border border-yellow-400 bg-yellow-400/10 backdrop-blur-sm text-yellow-400 px-5 py-2 rounded-md text-xs font-semibold uppercase tracking-widest mb-6 shadow-sm">
+        <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse"></span>
+        Especialización Médica: Caninos y Felinos
+      </div>
+      <p class="text-xl md:text-2xl mb-8 leading-relaxed text-gray-200 font-light max-w-2xl mx-auto">
+        Infraestructura médica avanzada y cuidado especializado para el bienestar integral de su paciente.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <button onclick="openLogin('CLIENT')"
+          class="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-slate-900 px-8 py-4 rounded-md text-base font-bold uppercase tracking-wider transition-all shadow-lg hover:shadow-yellow-500/20">
+          Agendar Cita
+        </button>
+        <a href="#servicios"
+          class="w-full sm:w-auto text-center border border-white/40 hover:border-white text-white hover:bg-white/10 px-8 py-4 rounded-md text-base font-semibold uppercase tracking-wider transition-all">
+          Servicios Clínicos
+        </a>
+      </div>
+    </div>
+
+    <!-- Indicador de scroll -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div class="w-6 h-10 border border-white/30 rounded-full flex justify-center p-1">
+        <div class="w-1 h-2 bg-white rounded-full animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE ESPECIFICACIÓN CLÍNICA (Diseño Corporativo) -->
+  <section class="bg-slate-50 border-b border-gray-200 py-12">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="inline-block p-3 bg-teal-50 rounded-full text-teal-700 mb-4">
+        <!-- Icono minimalista abstracto (Simulación de escudo médico) -->
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+        </svg>
+      </div>
+      <h3 class="text-xs font-bold uppercase tracking-widest text-teal-800 mb-2">Alcance de la Atención Veterinaria</h3>
+      <p class="text-xl font-semibold text-gray-800 max-w-2xl mx-auto leading-snug">
+        Nuestras instalaciones, laboratorios y cuerpo médico están certificados exclusivamente para la atención integral de <span class="text-teal-700 border-b-2 border-teal-600/20">perros y gatos</span>.
+      </p>
+      <p class="text-sm text-gray-500 mt-3 max-w-lg mx-auto">
+        Esta estricta especialización nos permite garantizar un estándar superior de seguridad diagnóstica y terapéutica para ambas especies.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-20 bg-white">
+    <div class="text-center mb-16 px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">Especialidades y Servicios Clínicos</h2>
+      <div class="w-12 h-1 bg-teal-600 mx-auto mt-4 rounded"></div>
+    </div>
+
+    <div class="space-y-20 max-w-6xl mx-auto px-4">
+      <!-- Servicio 1 -->
+      <div class="flex flex-col md:flex-row items-center gap-12" data-aos="fade-right">
+        <div class="w-full md:w-1/2">
+          <img src="img/medicina.jpg" alt="Consulta médica especializada" class="w-full h-[350px] object-cover rounded-lg shadow-md">
+        </div>
+        <div class="md:w-1/2 lg:pr-8">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <span class="text-teal-600 text-lg">01.</span> Consultas Médicas
+          </h3>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Ofrecemos evaluaciones clínicas exhaustivas realizadas por médicos veterinarios altamente calificados. 
+            Diagnosticamos patologías, realizamos el seguimiento estricto de tratamientos crónicos, gestionamos planes de vacunación y orientamos sobre la medicina preventiva para asegurar una excelente calidad de vida.
+          </p>
+        </div>
+      </div>
+
+      <!-- Servicio 2 -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-12" data-aos="fade-left">
+        <div class="w-full md:w-1/2">
+          <img src="/img/senioyperro.jpg" alt="Quirófano veterinario" class="w-full h-[350px] object-cover rounded-lg shadow-md">
+        </div>
+        <div class="md:w-1/2 lg:pl-8">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <span class="text-teal-600 text-lg">02.</span> Cirugías Complejas y de Emergencia
+          </h3>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Realizamos procedimientos quirúrgicos programados y de urgencia bajo estrictos protocolos internacionales de bioseguridad. 
+            Contamos con un quirófano completamente equipado, monitorización multiparámetro y personal especializado enfocado en reducir los riesgos perioperatorios.
+          </p>
+        </div>
+      </div>
+
+      <!-- Servicio 3 -->
+      <div class="flex flex-col md:flex-row items-center gap-12" data-aos="fade-right">
+        <div class="w-full md:w-1/2">
+          <img src="/img/gatitolab.jpg" alt="Laboratorio de análisis clínico" class="w-full h-[350px] object-cover rounded-lg shadow-md">
+        </div>
+        <div class="md:w-1/2 lg:pr-8">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <span class="text-teal-600 text-lg">03.</span> Laboratorio Clínico Integrado
+          </h3>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Nuestra unidad de diagnóstico ejecuta análisis de sangre, bioquímica clínica, uroanálisis y pruebas serológicas específicas. 
+            La automatización de los procesos nos permite emitir resultados rápidos y exactos, cruciales para decisiones médicas críticas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Servicio 4 -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-12" data-aos="fade-left">
+        <div class="w-full md:w-1/2">
+          <img src="/img/prueba.jpg" alt="Servicio de Grooming Clínico" class="w-full h-[350px] object-cover rounded-lg shadow-md">
+        </div>
+        <div class="md:w-1/2 lg:pl-8">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <span class="text-teal-600 text-lg">04.</span> Grooming Clínico e Higiene
+          </h3>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Servicios terapéuticos y estéticos adaptados a la condición dermatológica de cada paciente. 
+            Utilizamos productos medicados e hipoalergénicos aprobados por especialistas, garantizando un manejo libre de estrés enfocado en la salud de la piel y el manto.
+          </p>
+        </div>
+      </div>
+
+      <!-- Servicio 5 -->
+      <div class="flex flex-col md:flex-row items-center gap-12" data-aos="fade-right">
+        <div class="w-full md:w-1/2">
+          <img src="/img/producto.jpg" alt="Farmacia veterinaria especializada" class="w-full h-[350px] object-cover rounded-lg shadow-md">
+        </div>
+        <div class="md:w-1/2 lg:pr-8">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <span class="text-teal-600 text-lg">05.</span> Farmacia Especializada
+          </h3>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Disponemos de un inventario completo de medicamentos éticos, biológicos, suplementos y líneas de nutrición clínica prescrita. 
+            Garantizamos la trazabilidad y correcto almacenamiento de cada producto bajo supervisión farmacéutica continua.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Loginaaaaaaa -->
+  <div id="login-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md space-y-6">
+      <h2 class="text-2xl font-bold text-center text-gray-800">Iniciar Sesión</h2>
+      <form id="loginForm" class="space-y-4">
+        <input type="email" name="correo" placeholder="Correo" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none transition" />
+        <div class="relative mb-4">
+
+          <input type="password" id="loginContrasena" name="contrasena" placeholder="Contraseña" required
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none transition" />
+          <i id="toggleLoginPassword"
+            class="fa-solid fa-eye absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500"></i>
+        </div>
+
+        <input type="hidden" name="expectedRole" id="expectedRole" />
+        <button type="submit"
+          class="w-full bg-gradient-to-r from-green-600 to-green-500 text-white font-semibold py-2 rounded-lg hover:from-green-700 hover:to-green-600 transition shadow-md">Iniciar
+          sesión</button>
+      </form>
+      <button onclick="toggleLogin()"
+        class="w-full bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold py-2 rounded-lg hover:from-red-700 hover:to-red-600 transition shadow-md">Cancelar</button>
+      <a id="forgotLink" href="#" onclick="openForgotPassword()"
+        class="hidden block text-center text-sm text-blue-500 hover:underline">
+        ¿Olvidaste tu contraseña?
+      </a>
+    </div>
+  </div>
+
+  <!-- Modal Recuperar Contraseña -->
+  <div id="forgot-password-modal"
+    class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md space-y-6">
+      <h2 class="text-2xl font-bold text-center text-gray-800">Recuperar Contraseña</h2>
+      <form id="forgotPasswordForm" class="space-y-4">
+        <input type="email" id="forgotCorreo" placeholder="Correo electrónico" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none transition" />
+        <small id="forgot-info" class="text-gray-500 text-sm block mt-1"></small>
+        <button type="submit"
+          class="w-full bg-gradient-to-r from-green-600 to-green-500 text-white font-semibold py-2 rounded-lg hover:from-green-700 hover:to-green-600 transition shadow-md">
+          Enviar código de recuperación
+        </button>
+      </form>
+      <button onclick="toggleForgotPassword()"
+        class="w-full bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold py-2 rounded-lg hover:from-red-700 hover:to-red-600 transition shadow-md">
+        Cancelar
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal Ingresar Código y Nueva Contraseña -->
+  <div id="reset-password-modal"
+    class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md space-y-6">
+      <h2 class="text-2xl font-bold text-center text-gray-800">Restablecer Contraseña</h2>
+      <p id="codigo-expira-msg" class="text-center text-sm text-gray-600 hidden">
+        El código expira en <span id="countdown">05:00</span> minutos.
+      </p>
+
+
+      <form id="resetPasswordForm" class="space-y-4">
+        <!-- Código enviado al correo -->
+        <input type="text" id="codigoRecuperacion" placeholder="Código de recuperación" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none transition" />
+
+        <!-- Nueva contraseña -->
+        <div class="relative">
+          <input type="password" id="nuevaContrasena" placeholder="Nueva Contraseña" required
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none transition" />
+          <i id="toggleNuevaContrasena"
+            class="fa-solid fa-eye absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500"></i>
+        </div>
+
+        <!-- Confirmar nueva contraseña -->
+        <div class="relative">
+          <input type="password" id="confirmarNuevaContrasena" placeholder="Confirmar Nueva Contraseña" required
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none transition" />
+          <i id="toggleConfirmarContrasena"
+            class="fa-solid fa-eye absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500"></i>
+        </div>
+
+        <button type="submit"
+          class="w-full bg-gradient-to-r from-green-600 to-green-500 text-white font-semibold py-2 rounded-lg hover:from-green-700 hover:to-green-600 transition shadow-md">
+          Cambiar Contraseña
+        </button>
+      </form>
+
+      <button onclick="toggleResetPassword()"
+        class="w-full bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold py-2 rounded-lg hover:from-red-700 hover:to-red-600 transition shadow-md">
+        Cancelar
+      </button>
+    </div>
+  </div>
+<!-- Modal de cuenta desactivada -->
+<div id="modalDesactivado"
+  class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md space-y-4 text-center">
+    <h2 class="text-2xl font-bold text-red-600">Cuenta desactivada</h2>
+    <p class="text-gray-700 text-base">Tu cuenta ha sido desactivada. Si crees que es un error, comunícate con el administrador.</p>
+    <button onclick="cerrarModalDesactivado()"
+      class="mt-4 bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold py-2 px-6 rounded-lg hover:from-red-700 hover:to-red-600 transition shadow-md">
+      Cerrar
+    </button>
+  </div>
+</div>
+
+<div id="register-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center hidden z-50 p-4">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden flex flex-col max-h-[90vh]">
+    
+    <div class="px-8 pt-6 pb-4 border-b border-gray-100">
+      <h2 class="text-2xl font-bold text-gray-800">Registro de Cliente</h2>
+      <p class="text-sm text-gray-500 mt-1">Complete los datos del formulario para registrar un nuevo usuario.</p>
+    </div>
+
+    <form id="registerForm" class="p-8 overflow-y-auto space-y-6 flex-1">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1.5">Tipo de Documento</label>
+          <select id="tipoDocumentoId" name="tipoDocumentoId" required
+            class="w-full px-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:ring-2 focus:ring-green-500/20 focus:border-green-500 focus:bg-white focus:outline-none transition-all text-sm">
+            <option value="" disabled selected>Selecciona un tipo</option>
+            <option value="1">DNI</option>
+            <option value="2">RUC</option>
+            <option value="3">PASAPORTE</option>
+            <option value="4">CARNET DE EXTRANJERÍA</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1.5">Número de documento</label>
+          <div class="flex gap-2">
+            <input type="text" id="numeroIdentidad" name="numeroIdentidad" placeholder="Número de Documento" required
+              class="flex-1 px-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:ring-2 focus:ring-green-500/20 focus:border-green-500 focus:bg-white focus:outline-none transition-all text-sm" />
+            <button type="button" id="btnBuscarDocumento" title="Buscar documento"
+              class="px-4 bg-green-600 hover:bg-green-700 text-white rounded-xl flex items-center justify-center transition-colors shadow-sm shadow-green-600/10 active:scale-95 duration-150">
+              <i class="fa-solid fa-magnifying-glass text-sm"></i>
+              <span class="ml-2 text-sm font-medium hidden sm:inline">Buscar</span>
+            </button>
+          </div>
+          <small id="error-numeroIdentidad" class="text-red-500 text-xs mt-1 block font-medium"></small>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1.5">Nombres</label>
+          <input type="text" id="nombres" name="nombres" placeholder="Nombres completos" required
+            class="w-full px-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:ring-2 focus:ring-green-500/20 focus:border-green-500 focus:bg-white focus:outline-none transition-all text-sm" />
+          <small id="error-nombres" class="text-red-500 text-xs mt-1 block font-medium"></small>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1.5">Apellido Paterno</label>
+          <input type="text" id="apellidoPaterno" name="apellidoPaterno" placeholder="Apellido Paterno" required
+            class="w-full px-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:ring-2 focus:ring-green-500/20 focus:border-green-500 focus:bg-white focus:outline-none transition-all text-sm" />
+          <small id="error-apellidoPaterno" class="text-red-500 text-xs mt-1 block font-medium"></small>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1.5">Apellido Materno</label>
+          <input type="text" id="apellidoMaterno" name="apellidoMaterno" placeholder="Apellido Materno" required
+            class="w-full px-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:ring-2 focus:ring-green-500/20 focus:border-green-500 focus:bg-white focus:outline-none transition-all text-sm" />
+          <small id="error-apellidoMaterno" class="text-red-500 text-xs mt-1 block font-medium"></small>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1.5">Teléfono</label>
+          <input type="text" id="telefono" name="telefono" placeholder="Ej. 987654321" required
+            class="w-full px-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:ring-2 focus:ring-green-500/20 focus:border-green-500 focus:bg-white focus:outline-none transition-all text-sm" />
+          <small id="error-telefono" class="text-red-500 text-xs mt-1 block font-medium"></small>
+        </div>
+
+        <div class="md:col-span-2 bg-gray-50 p-4 rounded-xl border border-gray-200">
+          <label class="block text-sm font-semibold text-gray-700 mb-2.5">Sexo</label>
+          <div class="flex flex-wrap gap-6">
+            <label class="flex items-center gap-2 cursor-pointer text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+              <input type="radio" name="sexo" value="Masculino" required class="accent-green-600 w-4 h-4" />
+              <span>Masculino</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+              <input type="radio" name="sexo" value="Femenino" required class="accent-green-600 w-4 h-4" />
+              <span>Femenino</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+              <input type="radio" name="sexo" value="No Binario" required class="accent-green-600 w-4 h-4" />
+              <span>No Binario</span>
+            </label>
+          </div>
+          <small id="error-sexo" class="text-red-500 text-xs mt-1 block font-medium"></small>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1.5">Fecha de Nacimiento</label>
+          <input type="date" id="fechaNacimiento" name="fechaNacimiento" required
+            class="w-full px-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:ring-2 focus:ring-green-500/20 focus:border-green-500 focus:bg-white focus:outline-none transition-all text-sm" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1.5">Dirección</label>
+          <input type="text" id="direccion" name="direccion" placeholder="Dirección domiciliaria" required
+            class="w-full px-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:ring-2 focus:ring-green-500/20 focus:border-green-500 focus:bg-white focus:outline-none transition-all text-sm" />
+        </div>
+
+        <div class="md:col-span-2">
+          <label class="block text-sm font-semibold text-gray-700 mb-1.5">Correo Electrónico</label>
+          <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required
+            class="w-full px-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:ring-2 focus:ring-green-500/20 focus:border-green-500 focus:bg-white focus:outline-none transition-all text-sm" />
+          <div class="flex justify-between items-center mt-1">
+            <small id="error-correo" class="text-red-500 text-xs font-medium"></small>
+            <small id="info-correo" class="text-emerald-600 text-xs font-medium"></small>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1.5">Contraseña</label>
+          <div class="relative">
+            <input type="password" id="contrasena" name="contrasena" required placeholder="••••••••"
+              class="w-full px-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 pr-10 focus:ring-2 focus:ring-green-500/20 focus:border-green-500 focus:bg-white focus:outline-none transition-all text-sm" />
+            <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+              <i id="toggleContrasena" class="fa-solid fa-eye text-gray-400 hover:text-gray-600 cursor-pointer text-sm"></i>
+            </div>
+          </div>
+          <small id="error-contrasena" class="text-red-500 text-xs mt-1 block font-medium"></small>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1.5">Confirmar Contraseña</label>
+          <div class="relative">
+            <input type="password" id="contrasenaConfirm" name="contrasenaConfirm" required placeholder="••••••••"
+              class="w-full px-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:ring-2 focus:ring-green-500/20 focus:border-green-500 focus:bg-white focus:outline-none transition-all text-sm" />
+          </div>
+          <small id="error-contrasenaConfirm" class="text-red-500 text-xs mt-1 block font-medium"></small>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col-reverse sm:flex-row gap-3 pt-4 border-t border-gray-100">
+        <button type="button" onclick="toggleRegister()"
+          class="flex-1 px-4 py-2.5 border border-gray-300 text-gray-700 font-semibold rounded-xl hover:bg-gray-50 transition-colors text-sm">
+          Cancelar
+        </button>
+        <button type="submit"
+          class="flex-1 px-4 py-2.5 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-colors shadow-md shadow-green-600/20 text-sm">
+          Registrarse
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+  <!-- CARRRRRRRRRRRRRRRRRUSEEEEEEEEEEEEEEL -->
+  <section id="carrusel" class="relative w-full max-w-5xl mx-auto my-12 rounded-xl overflow-hidden shadow-lg">
+    <div class="relative h-64 md:h-96 bg-transparent">
+      <div class="carousel-slides w-full h-full relative">
+        <!-- Slide 1 -->
+        <div
+          class="absolute inset-0 transition-opacity duration-700 opacity-100 flex justify-center items-center bg-teal-600">
+          <img src="/img/perritos3.jpg" alt="Imagen 1" class="max-h-full max-w-full object-contain">
+          <div
+            class="absolute bottom-6 left-6 bg-white/80 text-gray-800 px-4 py-2 rounded-lg text-lg shadow-lg backdrop-blur-md">
+            Atención Veterinaria Integral
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div
+          class="absolute inset-0 transition-opacity duration-700 opacity-0 flex justify-center items-center bg-teal-600">
+          <img src="/img/cirujia.jpg" alt="Imagen 2" class="max-h-full max-w-full object-contain">
+          <div
+            class="absolute bottom-6 left-6 bg-white/80 text-gray-800 px-4 py-2 rounded-lg text-lg shadow-lg backdrop-blur-md">
+            Cirugías Especializadas
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div
+          class="absolute inset-0 transition-opacity duration-700 opacity-0 flex justify-center items-center bg-teal-600">
+          <img src="/img/local.jpg" alt="Imagen 3" class="max-h-full max-w-full object-contain">
+          <div
+            class="absolute bottom-6 left-6 bg-white/80 text-gray-800 px-4 py-2 rounded-lg text-lg shadow-lg backdrop-blur-md">
+            Local
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div
+          class="absolute inset-0 transition-opacity duration-700 opacity-0 flex justify-center items-center bg-teal-600">
+          <img src="/img/alimentacion.jpg" alt="Imagen 4" class="max-h-full max-w-full object-contain">
+          <div
+            class="absolute bottom-6 left-6 bg-white/80 text-gray-800 px-4 py-2 rounded-lg text-lg shadow-lg backdrop-blur-md">
+            Alimentacion
+          </div>
+        </div>
+      </div>
+
+      <!-- Botón Anterior -->
+      <button id="prevBtn"
+        class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white text-teal-700 hover:text-white hover:bg-teal-600 border border-gray-200 rounded-full p-2 shadow-lg transition duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-teal-400 z-10">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <!-- Botón Siguiente -->
+      <button id="nextBtn"
+        class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white text-teal-700 hover:text-white hover:bg-teal-600 border border-gray-200 rounded-full p-2 shadow-lg transition duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-teal-400 z-10">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+
+      <!-- Indicadores -->
+      <div class="flex justify-center items-center gap-2 mt-4">
+        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full transition duration-300"></button>
+        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full transition duration-300"></button>
+        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full transition duration-300"></button>
+        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full transition duration-300"></button>
+      </div>
+  </section>
+
+  <!-- Mapaaa -->
+
+  <section id="ubicacion" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-4xl font-bold text-gray-800 flex justify-center items-center gap-2" data-aos="fade-up"> <svg
+            class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4.5 8-10a8 8 0 10-16 0c0 5.5 8 10 8 10z" />
+          </svg> Nuestra Ubicación </h2>
+        <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100"> Encuentra fácilmente nuestra
+          veterinaria en J- S/N, Av Cutervo 9, Ica </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-6xl mx-auto">
+        <!-- Mapa -->
+        <div class="lg:col-span-7 aspect-[4/3] overflow-hidden shadow-xl border-4 border-white rounded-xl"
+          data-aos="fade-right">
+          <div id="map" class="w-full h-full min-h-[300px] lg:min-h-[400px] rounded-xl"></div>
+        </div>
+
+        <!-- Información -->
+        <div class="lg:col-span-5 bg-white rounded-2xl shadow-xl p-6 border-4 border-white space-y-4"
+          data-aos="fade-left">
+          <h3 class="text-2xl font-bold text-gray-800">📅 Horarios de Atención</h3>
+          <ul class="text-gray-600 space-y-1">
+            <li><strong>Lunes a Viernes:</strong> 8:00 a.m. - 6:00 p.m.</li>
+            <li><strong>Sábados:</strong> 9:00 a.m. - 1:00 p.m.</li>
+            <li><strong>Domingos y Feriados:</strong> Cerrado</li>
+          </ul>
+
+          <div class="mt-6">
+            <h4 class="text-xl font-bold text-red-600">🚨 Emergencias</h4>
+            <p class="text-gray-700 mt-1">Si tienes una emergencia fuera de horario, llámanos al:</p>
+            <p class="text-lg font-semibold text-teal-700 mt-2">
+              <i class="fas fa-phone-alt"></i> +51 987 654 321
+            </p>
+          </div>
+
+          <div class="mt-6">
+            <h4 class="text-xl font-bold text-gray-800">🌐 Síguenos en redes</h4>
+            <div class="flex gap-4 mt-2">
+              <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook fa-lg"></i></a>
+              <a href="#" class="text-pink-500 hover:text-pink-700"><i class="fab fa-instagram fa-lg"></i></a>
+              <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-twitter fa-lg"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Toast Container -->
+  <div id="toast-container" class="fixed top-6 right-6 z-50 space-y-4"></div>
+
+<!--IA POR MIENTRAS-->
+<div class="fixed bottom-6 right-6 z-50 font-sans antialiased">
+      
+      <button onclick="toggleChat()" id="chat-button" 
+              class="bg-teal-700 hover:bg-teal-800 text-white w-20 h-20 rounded-full shadow-[0_10px_30px_rgba(15,118,110,0.5)] flex items-center justify-center transition-all duration-300 hover:scale-110 relative group border-2 border-white">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-600 opacity-40"></span>
+          <i class="fa-solid fa-wand-magic-sparkles text-2xl relative z-10 animate-pulse text-yellow-300"></i>
+      </button>
+
+      <div id="chat-window" class="hidden fixed bottom-24 right-6 w-[92vw] sm:w-[420px] h-[580px] bg-white rounded-2xl shadow-[0_15px_50px_rgba(0,0,0,0.2)] border border-gray-200 flex flex-col overflow-hidden transition-all duration-300 origin-bottom-right">
+          
+          <div class="bg-teal-800 p-4 flex justify-between items-center shadow-md">
+              <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center relative border border-white/10">
+                      <i class="fa-solid fa-robot text-xl text-yellow-300"></i>
+                      <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-400 rounded-full border-2 border-teal-800"></span>
+                  </div>
+                  <div>
+                      <h3 class="font-bold text-white tracking-tight text-sm">ClifarBot</h3>
+                      <p class="text-xs text-teal-100 font-medium">Asistente de Inteligencia Artificial</p>
+                  </div>
+              </div>
+              <button onclick="toggleChat()" class="text-teal-200 hover:text-white transition-colors p-1">
+                  <i class="fa-solid fa-xmark text-xl"></i>
+              </button>
+          </div>
+
+          <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 bg-gray-50/70">
+    
+    <div class="flex items-start gap-2.5 max-w-[85%]">
+        <div class="w-8 h-8 bg-teal-700 text-white rounded-lg flex items-center justify-center text-xs shrink-0 shadow-sm border border-teal-800">
+            <i class="fa-solid fa-robot"></i>
+        </div>
+        <div class="bg-white p-3.5 rounded-2xl rounded-tl-none shadow-sm border border-gray-100">
+            <p class="text-sm text-gray-800 leading-relaxed">
+                ¡Hola! 🐾 Bienvenido al asistente de IA de **CLIFARVET**. ¿En cuál de estos aspectos puedo ayudarte hoy? Selecciona una opción o escribe libremente tu consulta abajo.
+            </p>
+        </div>
+    </div>
+
+    <div id="quick-pills" class="flex flex-wrap gap-2 pt-2 justify-start pl-10">
+        <button onclick="quickAction('Cuidados básicos')" 
+                class="flex items-center gap-2 px-5 py-2 bg-white hover:bg-teal-50 text-teal-700 border-2 border-teal-700 rounded-full text-sm font-semibold transition-all shadow-sm hover:shadow-md">
+            <i class="fa-regular fa-heart text-base"></i> Cuidados básicos
+        </button>
+        
+        <button onclick="quickAction('Emergencias')" 
+                class="flex items-center gap-2 px-5 py-2 bg-red-600 hover:bg-red-700 text-white border-2 border-red-700 rounded-full text-sm font-bold transition-all shadow-[0_4px_12px_rgba(220,38,38,0.3)] hover:shadow-lg animate-pulse">
+            <i class="fa-solid fa-circle-exclamation text-base"></i> Emergencias
+        </button>
+        
+        <button onclick="quickAction('Alimentación')" 
+                class="flex items-center gap-2 px-5 py-2 bg-white hover:bg-teal-50 text-teal-700 border-2 border-teal-700 rounded-full text-sm font-semibold transition-all shadow-sm hover:shadow-md">
+            <i class="fa-solid fa-bone text-base"></i> Alimentación
+        </button>
+    </div>
+
+</div>
+
+          <div class="p-3 bg-white border-t border-gray-100 flex items-center gap-2">
+              <input type="text" id="chat-input" placeholder="Pregúntale a la IA sobre tu mascota o los horarios..." 
+                     onkeydown="if(event.key === 'Enter') sendMessage()"
+                     class="flex-1 px-4 py-2.5 bg-gray-50 text-sm rounded-xl border border-gray-200 focus:outline-none focus:border-teal-700 focus:bg-white transition-all text-gray-700 font-medium">
+              <button onclick="sendMessage()" class="bg-teal-700 hover:bg-teal-800 text-white w-10 h-10 rounded-xl flex items-center justify-center transition-all shadow-md shrink-0">
+                  <i class="fa-solid fa-paper-plane text-sm"></i>
+              </button>
+          </div>
+
+      </div>
+  </div>
+
+
+
+  <script>
+
+<!--JS DE IA-->
+function toggleChat() {
+          const chatWindow = document.getElementById('chat-window');
+          chatWindow.classList.toggle('hidden');
+          if (!chatWindow.classList.contains('hidden')) {
+              document.getElementById('chat-input').focus();
+          }
+      }
+
+      function quickAction(topic) {
+          document.getElementById('chat-input').value = topic;
+          sendMessage();
+      }
+
+      // Procesa las respuestas automáticas e interacciones críticas pre-login
+      function getAIResponse(userText) {
+          const text = userText.toLowerCase();
+          
+          // CASO CRÍTICO: Emergencia con generación de cita inmediata
+          if (text.includes('emergencia') || text.includes('grave') || text.includes('accidente')) {
+              const codigoEmergencia = "CITA-EMERG-" + Math.floor(1000 + Math.random() * 9000);
+              return `
+                  <div class="space-y-2">
+                      <p class="text-red-600 font-bold flex items-center gap-1.5">
+                          <i class="fa-solid fa-triangle-exclamation animate-pulse"></i> ¡ALERTA DE EMERGENCIA PROCESADA!
+                      </p>
+                      <p class="text-gray-700 text-xs">
+                          Detectamos una situación crítica. El sistema ha generado automáticamente un ticket de atención de urgencia prioritario saltándose el inicio de sesión convencional.
+                      </p>
+                      <div class="bg-red-50 border-l-4 border-red-500 p-2.5 rounded text-xs space-y-1 my-2 font-mono">
+                          <p><strong>Ticket:</strong> <span class="text-red-700">${codigoEmergencia}</span></p>
+                          <p><strong>Estado:</strong> Atención de urgencia médica</p>
+                          <p><strong>Destino:</strong> Área de Quirófano / Triaje</p>
+                          <p><strong>Asignado a:</strong> Veterinario de Guardia de CLIFARVET</p>
+                      </div>
+                      <p class="text-gray-700 text-xs">
+                          <strong>¿Qué hacer ahora?</strong> Acude de inmediato a nuestra clínica en Av. Cutervo. Nuestro personal ya está notificado en el panel interno. Si necesitas soporte en el trayecto, llámanos al <span class="font-bold text-teal-700">+51 987 654 321</span>.
+                      </p>
+                  </div>
+              `;
+          }
+
+          // Apartados informativos básicos del Index
+          if (text.includes('cuidado') || text.includes('fiebre') || text.includes('enfermo')) {
+              return `🤒 **Cuidados Básicos:** Si sospechas que tu perro tiene **fiebre**, verifica si presenta la nariz seca y caliente, orejas/patas con temperatura alta, letargo o temblores. Si consideras que su estado se agrava drásticamente, presiona el botón de **Emergencias** para levantar un ticket de atención inmediata.`;
+          }
+          if (text.includes('alimenta') || text.includes('comida') || text.includes('comer')) {
+              return `🍖 **Pautas de Alimentación:** En días calurosos o de malestar, fracciona la comida de tu peludo en porciones pequeñas y dáselas en **horarios frescos** (mañana o noche). Mantén agua limpia y fresca disponible en todo momento.`;
+          }
+          if (text.includes('horario') || text.includes('atienden') || text.includes('abierto')) {
+              return `📅 **Horarios de la Clínica:**<br>• Lunes a Viernes: 8:00 a.m. - 6:00 p.m.<br>• Sábados: 9:00 a.m. - 1:00 p.m.<br>• Domingos y Feriados: Cerrado.<br><br>*(Recuerda que la asistencia por Emergencias se salta estas restricciones vía telefónica o por este chat).*`;
+          }
+          
+          // Respuesta por defecto
+          return `🐾 Hola. Como te encuentras en la página principal, solo puedo asistirte en información básica (horarios, alimentación, cuidados) o **activar el protocolo de Emergencia**. ¿Deseas agendar una cita regular? Por favor, inicia sesión como **Cliente** en el menú de arriba.`;
+      }
+
+      function sendMessage() {
+          const input = document.getElementById('chat-input');
+          const text = input.value.trim();
+          if (!text) return;
+
+          const messagesContainer = document.getElementById('chat-messages');
+
+          // 1. Añadir el mensaje del usuario
+          const userMessageHtml = `
+              <div class="flex items-start gap-2.5 max-w-[85%] ml-auto justify-end">
+                  <div class="bg-teal-700 text-white p-3.5 rounded-2xl rounded-tr-none shadow-sm text-sm font-medium">
+                      <p>${text}</p>
+                  </div>
+              </div>`;
+          messagesContainer.innerHTML += userMessageHtml;
+          input.value = ""; 
+          messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+          // 2. Animación de carga/análisis
+          const typingId = "typing-" + Date.now();
+          const isEmergency = text.toLowerCase().includes('emergencia') || text.toLowerCase().includes('grave');
+          const loadingText = isEmergency ? "¡Asignando Veterinario y Reservando Quirófano...!" : "Buscando información veterinaria...";
+          
+          const typingHtml = `
+              <div id="${typingId}" class="flex items-start gap-2.5 max-w-[85%]">
+                  <div class="w-8 h-8 bg-teal-700 text-white rounded-lg flex items-center justify-center text-xs shrink-0">
+                      <i class="fa-solid fa-robot"></i>
+                  </div>
+                  <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-gray-100 shadow-sm text-xs text-gray-400 italic flex items-center gap-2">
+                      <i class="fa-solid fa-circle-notch fa-spin text-teal-600"></i> ${loadingText}
+                  </div>
+              </div>`;
+          messagesContainer.innerHTML += typingHtml;
+          messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+          // 3. Respuesta simulada inteligente
+          setTimeout(() => {
+              const typingElement = document.getElementById(typingId);
+              if (typingElement) typingElement.remove();
+
+              const aiAnswer = getAIResponse(text);
+              const botMessageHtml = `
+                  <div class="flex items-start gap-2.5 max-w-[85%]">
+                      <div class="w-8 h-8 bg-teal-700 text-white rounded-lg flex items-center justify-center text-xs shrink-0 shadow-sm border border-teal-800">
+                          <i class="fa-solid fa-robot"></i>
+                      </div>
+                      <div class="bg-white p-3.5 rounded-2xl rounded-tl-none shadow-sm border border-gray-100">
+                          <div class="text-sm text-gray-800 leading-relaxed">${aiAnswer}</div>
+                      </div>
+                  </div>`;
+              
+              messagesContainer.innerHTML += botMessageHtml;
+              messagesContainer.scrollTop = messagesContainer.scrollHeight;
+          }, 1200);
+      }
+
+    function initMap() {
+      const ubicacionClinica = { lat: -14.076819637086812, lng: -75.7389531413638 };
+
+      const mapa = new google.maps.Map(document.getElementById("map"), {
+        zoom: 16,
+        center: ubicacionClinica,
+        disableDefaultUI: true,
+      });
+
+      new google.maps.Marker({
+        position: ubicacionClinica,
+        map: mapa,
+        title: "Clínica Veterinaria Puente Blanco"
+      });
+    }
+
+    document.getElementById("comentarioForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const comentario = document.getElementById("comentarioTexto").value.trim();
+
+      const tieneSesion = document.cookie.split(';').some(c => c.trim().startsWith('jwt='));
+
+      if (!tieneSesion) {
+        alert("Debes iniciar sesión para comentar.");
+        openLogin('CLIENT');
+        return;
+      }
+
+      // Agrega el comentario visualmente
+      const lista = document.getElementById("comentariosPublicados");
+      const nuevoComentario = document.createElement("div");
+      nuevoComentario.className = "p-4 border rounded bg-gray-50 text-gray-800";
+      nuevoComentario.innerText = comentario;
+      lista.prepend(nuevoComentario);
+
+      // Limpia el campo
+      document.getElementById("comentarioTexto").value = "";
+      document.getElementById("comentarioMensaje").classList.remove("hidden");
+
+      // Puedes aquí hacer un fetch() POST al backend si deseas persistir
+    });
+  </script>
+
+  <!-- API de Google Maps (asegúrate de tener la facturación habilitada y que tu clave esté activa) -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh5GriehkiRaeWMMB1-Zw7kw0zRyqB6Cw&callback=initMap">
+    </script>
+
+  <script>
+    //Este es para el navbar responsive
+    const toggleBtn = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+
+  <!-- Script DEL CARRUSELLL -->
+  <script>
+    const slides = document.querySelectorAll('.carousel-slides > div');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const indicators = document.querySelectorAll('.carousel-indicator');
+    let currentSlide = 0;
+    let autoSlideInterval;
+    const intervalTime = 5000;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('opacity-100', i === index);
+        slide.classList.toggle('opacity-0', i !== index);
+      });
+      indicators.forEach((ind, i) => {
+        ind.classList.toggle('bg-teal-600', i === index);
+        ind.classList.toggle('bg-gray-300', i !== index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(nextSlide, intervalTime);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(autoSlideInterval);
+    }
+
+    nextBtn.addEventListener('click', () => {
+      stopAutoSlide();
+      nextSlide();
+      startAutoSlide();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      stopAutoSlide();
+      prevSlide();
+      startAutoSlide();
+    });
+
+    indicators.forEach((ind, i) => {
+      ind.addEventListener('click', () => {
+        stopAutoSlide();
+        currentSlide = i;
+        showSlide(currentSlide);
+        startAutoSlide();
+      });
+    });
+
+    const carousel = document.querySelector('#carrusel');
+    carousel.addEventListener('mouseenter', stopAutoSlide);
+    carousel.addEventListener('mouseleave', startAutoSlide);
+
+    // Iniciar
+    showSlide(currentSlide);
+    startAutoSlide();
+  </script>
+
+<script>
+  function cerrarModalDesactivado() {
+    document.getElementById("modalDesactivado").classList.add("hidden");
+  }
+</script>
+
+  <!-- Scripts -->
+  <script>
+ // Elementos de modales
+  const loginModal = document.getElementById('login-modal');
+  const registerModal = document.getElementById('register-modal');
+  const expectedRoleInput = document.getElementById('expectedRole');
+
+  // Validaciones en tiempo real de texto sin números
+  function validarTextoSinNumeros(idInput, idError) {
+    const input = document.getElementById(idInput);
+    const mensaje = document.getElementById(idError);
+
+    input.addEventListener('input', () => {
+      const valor = input.value.trim();
+      if (!valor) {
+        mensaje.textContent = "";
+      } else if (/\d/.test(valor)) {
+        mensaje.textContent = "No debe contener números.";
+      } else {
+        mensaje.textContent = "";
+      }
+    });
+  }
+  validarTextoSinNumeros('nombres', 'error-nombres');
+  validarTextoSinNumeros('apellidoPaterno', 'error-apellidoPaterno');
+  validarTextoSinNumeros('apellidoMaterno', 'error-apellidoMaterno');
+
+  // Validaciones de documento según tipo
+  const tipoDocSelect = document.getElementById('tipoDocumentoId');
+  const numeroIdentidadInput = document.getElementById('numeroIdentidad');
+  const errorNumero = document.getElementById('error-numeroIdentidad');
+  const btnBuscarDocumento = document.getElementById('btnBuscarDocumento');
+
+  // Restricción física de caracteres en tiempo real para el Documento
+  numeroIdentidadInput.addEventListener('input', () => {
+    const tipo = tipoDocSelect.value;
+    
+    // Si es DNI o RUC, remover cualquier carácter que no sea número inmediatamente
+    if (tipo === "1" || tipo === "2") {
+      numeroIdentidadInput.value = numeroIdentidadInput.value.replace(/\D/g, '');
+    }
+
+    // Asignar dinámicamente el límite máximo de caracteres
+    if (tipo === "1") {
+      numeroIdentidadInput.maxLength = 8;
+    } else if (tipo === "2") {
+      numeroIdentidadInput.maxLength = 11;
+    } else if (tipo === "3") {
+      numeroIdentidadInput.maxLength = 12;
+    } else if (tipo === "4") {
+      numeroIdentidadInput.maxLength = 9;
+    } else {
+      numeroIdentidadInput.removeAttribute('maxLength');
+    }
+
+    validarNumeroDocumento();
+  }); 
+  
+  function validarNumeroDocumento() {
+    const tipo = tipoDocSelect.value;
+    const valor = numeroIdentidadInput.value.trim();
+
+    if (!valor) {
+      errorNumero.textContent = "";
+      return false;
+    } else if (tipo === "1" && !/^\d{8}$/.test(valor)) {
+      errorNumero.textContent = "El DNI debe contener 8 dígitos numéricos.";
+      return false;
+    } else if (tipo === "2" && !/^\d{11}$/.test(valor)) {
+      errorNumero.textContent = "El RUC debe contener 11 dígitos numéricos.";
+      return false;
+    } else if (tipo === "3" && !/^[A-Za-z0-9]{6,12}$/.test(valor)) {
+      errorNumero.textContent = "El Pasaporte debe contener entre 6 y 12 caracteres alfanuméricos.";
+      return false;
+    } else if (tipo === "4" && !/^[A-Za-z0-9]{9}$/.test(valor)) {
+      errorNumero.textContent = "El Carnet de Extranjería debe contener exatamente 9 caracteres.";
+      return false;
+    } else {
+      errorNumero.textContent = "";
+      return true;
+    }
+  }
+
+tipoDocSelect.addEventListener('change', () => {
+    numeroIdentidadInput.value = '';
+    errorNumero.textContent = '';
+    numeroIdentidadInput.removeAttribute('maxLength');
+  });
+
+  // Función asíncrona para buscar los datos del documento
+  async function buscarDatosDocumento() {
+    const tipo = tipoDocSelect.value;
+    const valor = numeroIdentidadInput.value.trim();
+
+    // Validamos la estructura antes de hacer consultas
+    if (!validarNumeroDocumento() || !valor) {
+      if(!valor) errorNumero.textContent = "Ingrese un número de documento.";
+      return;
+    }
+
+    // Proceso según el tipo seleccionado
+    if (tipo === "1") {
+      // Efecto visual de carga en el botón
+      const originalContent = btnBuscarDocumento.innerHTML;
+      btnBuscarDocumento.innerHTML = `<i class="fa-solid fa-spinner animate-spin text-sm"></i><span class="ml-2 text-sm font-medium hidden sm:inline">Buscando...</span>`;
+      btnBuscarDocumento.disabled = true;
+
+      try {
+        const res = await fetch(`http://localhost:8082/api/reniec/dni/${valor}`);
+        if (!res.ok) throw new Error("No se encontraron resultados");
+        
+        const data = await res.json();
+
+        document.getElementById('nombres').value = data.nombres || "";
+        document.getElementById('apellidoPaterno').value = data.apellidoPaterno || "";
+        document.getElementById('apellidoMaterno').value = data.apellidoMaterno || "";
+        errorNumero.textContent = "";
+      } catch (err) {
+        console.error("Error al consultar RENIEC:", err);
+        errorNumero.textContent = "No se pudo autofiltrar. Ingrese los datos manualmente.";
+      } finally {
+        btnBuscarDocumento.innerHTML = originalContent;
+        btnBuscarDocumento.disabled = false;
+      }
+    } else if (tipo === "4") {
+      errorNumero.textContent = "Consulta automatizada de C.E. no disponible. Ingrese sus datos manualmente.";
+    } else {
+      errorNumero.textContent = "Búsqueda automatizada solo disponible para DNI temporalmente.";
+    }
+  }
+
+  // Eventos para gatillar la búsqueda (Clic en botón y evento Blur)
+  btnBuscarDocumento.addEventListener('click', buscarDatosDocumento);
+  numeroIdentidadInput.addEventListener('blur', buscarDatosDocumento);
+
+  // Validación de teléfono en tiempo real con restricción estricta de 9 dígitos numéricos
+  const telefonoInput = document.getElementById('telefono');
+  const errorTelefono = document.getElementById('error-telefono');
+
+  telefonoInput.addEventListener('input', () => {
+    // Forzar a que solo se escriban números y un máximo de 9 caracteres
+    telefonoInput.value = telefonoInput.value.replace(/\D/g, '');
+    telefonoInput.maxLength = 9;
+
+    const valor = telefonoInput.value.trim();
+    if (!valor) {
+      errorTelefono.textContent = "";
+    } else if (!/^\d{9}$/.test(valor)) {
+      errorTelefono.textContent = "Debe contener 9 dígitos numéricos.";
+    } else {
+      errorTelefono.textContent = "";
+    }
+  });
+
+  // Validación de correo en tiempo real
+  const correoInput = document.getElementById('correo');
+  correoInput.addEventListener('input', () => {
+    const mensaje = document.getElementById('error-correo');
+    const info = document.getElementById('info-correo');
+    const valor = correoInput.value.trim();
+    const regex = /^[^\s@]+@[^\s@]+\.(com|pe|org|edu)(\.[a-z]{2})?$/i;
+
+    if (!valor) {
+      mensaje.textContent = "";
+      info.textContent = "";
+    } else if (!regex.test(valor)) {
+      mensaje.textContent = "Debe tener un formato válido (ej: ejemplo@correo.com)";
+      info.textContent = "";
+    } else {
+      mensaje.textContent = "";
+      info.textContent = "✓ Correo válido. Verifica que sea funcional.";
+    }
+  });
+
+  // Validación de sexo
+  const sexoRadios = document.querySelectorAll('input[name="sexo"]');
+  const sexoError = document.getElementById('error-sexo');
+
+  function validarSexo() {
+    const seleccionado = Array.from(sexoRadios).some(radio => radio.checked);
+    sexoError.textContent = seleccionado ? "" : "Selecciona un sexo.";
+  }
+  sexoRadios.forEach(radio => radio.addEventListener('change', validarSexo));
+
+  // Validación unificada de contraseñas
+  const contrasenaInput = document.getElementById('contrasena');
+  const contrasenaConfirmInput = document.getElementById('contrasenaConfirm');
+  const errorContra = document.getElementById('error-contrasena');
+  const errorConfirm = document.getElementById('error-contrasenaConfirm');
+
+  function validarContra() {
+    const v = contrasenaInput.value;
+    const strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+    
+    errorContra.textContent = strongRegex.test(v)
+      ? ""
+      : "Mín. 8 carac., mayúsc., minúsc., número y símbolo.";
+    return strongRegex.test(v);
+  }
+
+  function validarConfirm() {
+    errorConfirm.textContent = contrasenaConfirmInput.value === contrasenaInput.value
+      ? ""
+      : "Las contraseñas no coinciden.";
+    return contrasenaConfirmInput.value === contrasenaInput.value;
+  }
+
+  contrasenaInput.addEventListener('input', () => {
+    validarContra();
+    if (contrasenaConfirmInput.value) validarConfirm();
+  });
+  contrasenaConfirmInput.addEventListener('input', validarConfirm);
+
+  // Funciones de validación externa (Nueva contraseña fuerte)
+  function validarNuevaContrasena() {
+    const input = document.getElementById('nuevaContrasena');
+    if(!input) return true;
+    const valor = input.value;
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+    if (!regex.test(valor)) {
+      showNotification("Contraseña débil: mín. 8 carac., mayúscula, minúscula, número y símbolo.", 'error');
+      return false;
+    }
+    return true;
+  }
+
+  function validarConfirmacionContrasena() {
+    const nueva = document.getElementById('nuevaContrasena')?.value;
+    const confirmar = document.getElementById('confirmarNuevaContrasena')?.value;
+    if (nueva !== confirmar) {
+      showNotification("Las contraseñas no coinciden.", 'error');
+      return false;
+    }
+    return true;
+  }
+
+  // Autocompleta olvido de contraseña
+    function openForgotPassword() {
+      // Verificar si existe un código aún vigente
+      const expiration = Number(localStorage.getItem("recoveryExpiration"));
+      if (expiration && expiration > Date.now()) {
+
+          // Si el formulario de correo está abierto, cerrarlo
+          const forgotModal = document.getElementById("forgot-password-modal");
+          if (!forgotModal.classList.contains("hidden")) {
+              toggleForgotPassword();
+          }
+
+          // Abrir solo si el formulario de cambio aún no está abierto
+          const resetModal = document.getElementById("reset-password-modal");
+          if (resetModal.classList.contains("hidden")) {
+              toggleResetPassword();
+          }
+
+          iniciarCuentaRegresiva();
+
+          return;
+      }
+      // Si no existe código vigente, mostrar el formulario para solicitar correo
+      const correoGuardado = localStorage.getItem('correoCliente');
+      const correoInput = document.getElementById('forgotCorreo');
+      const info = document.getElementById('forgot-info');
+      if (correoInput) {
+          correoInput.value = correoGuardado || '';
+          correoInput.readOnly = false;
+      }
+      if (info) {
+          info.textContent = correoGuardado
+              ? "Correo autocompletado del último inicio de sesión exitoso. Puedes modificarlo si lo necesitas."
+              : "";
+      }
+      toggleForgotPassword();
+  }
+
+ // Mostrar / ocultar contraseña del primer campo (Único Ojo Activo)
+  document.getElementById('toggleContrasena').addEventListener('click', function() {
+    const type = contrasenaInput.type === 'password' ? 'text' : 'password';
+    contrasenaInput.type = type;
+    this.classList.toggle('fa-eye');
+    this.classList.toggle('fa-eye-slash');
+  });
+
+  // Ojo de cambio de contraseña si existieran en el DOM
+  const toggleNueva = document.getElementById('toggleNuevaContrasena');
+  if(toggleNueva) {
+    toggleNueva.addEventListener('click', () => {
+      const input = document.getElementById('nuevaContrasena');
+      input.type = input.type === 'password' ? 'text' : 'password';
+    });
+  }
+
+  const toggleConfirmarNueva = document.getElementById('toggleConfirmarContrasena');
+  if(toggleConfirmarNueva) {
+    toggleConfirmarNueva.addEventListener('click', () => {
+      const input = document.getElementById('confirmarNuevaContrasena');
+      input.type = input.type === 'password' ? 'text' : 'password';
+    });
+  }
+
+
+    // Modales
+    function toggleLogin() {
+      loginModal.classList.toggle('hidden');
+      limpiarFormularioLogin();
+    }
+    function limpiarFormularioLogin() {
+      const form = document.getElementById('loginForm');
+      form.reset(); // limpia los inputs
+      const passwordInput = document.getElementById('loginContrasena');
+      const eyeIcon = document.getElementById('toggleLoginPassword');
+
+      // Reset al tipo y al ícono
+      passwordInput.type = 'password';
+      eyeIcon.classList.remove('fa-eye-slash');
+      eyeIcon.classList.add('fa-eye');
+    }
+
+    function toggleRegister() {
+      registerModal.classList.toggle('hidden');
+      limpiarFormularioRegistro();
+    }
+    function limpiarFormularioRegistro() {
+      document.getElementById("registerForm").reset();
+      document.querySelectorAll('#registerForm small').forEach(msj => msj.textContent = "");
+    }
+
+    function openLogin(role, modo = '') {
+      expectedRoleInput.value = role;
+      sessionStorage.setItem("loginModo", modo); // NUEVO: guardar modo
+      // Mostrar el enlace solo para el cliente
+      const forgotLink = document.getElementById('forgotLink');
+      forgotLink.classList.toggle('hidden', role !== 'CLIENT');
+
+      toggleLogin();
+    }
+
+
+    // Mostrar/ocultar modal de recuperar contraseña
+    function toggleForgotPassword() {
+      document.getElementById('forgot-password-modal').classList.toggle('hidden');
+    }
+
+    // Mostrar/ocultar modal de reset de contraseña
+    function toggleResetPassword() {
+      document.getElementById('reset-password-modal').classList.toggle('hidden');
+    }
+
+    function logout() {
+      localStorage.removeItem('correoCliente');
+      document.cookie = "jwt=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+      window.location.href = '/';
+    }
+
+    let recoveryTimer = null;
+    // Enviar código de recuperación
+    document.getElementById('forgotPasswordForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const correo = document.getElementById('forgotCorreo').value.trim();
+      const botonEnviar = e.target.querySelector('button[type="submit"]');
+      if (!correo) {
+        showNotification("Ingresa tu correo.", 'error');
+        return;
+      }
+
+      // Deshabilita el botón para evitar múltiples clics
+      botonEnviar.disabled = true;
+      botonEnviar.textContent = "Enviando...";
+
+      try {
+        const res = await fetch('http://localhost:8082/api/password/send-code', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ correo })
+        });
+        const msg = await res.text();
+        if (res.ok) {
+
+          // Guarda el correo
+          localStorage.setItem("correoRecuperacion", correo);
+
+          // Guarda la fecha exacta en la que vencerá el código
+          const expiration = Date.now() + (5 * 60 * 1000);
+          localStorage.setItem("recoveryExpiration", expiration);
+
+          showNotification("Código enviado correctamente.", 'success');
+          document.getElementById("codigo-expira-msg").innerHTML =
+              'El código expira en <span id="countdown">05:00</span>';
+          toggleForgotPassword();
+          toggleResetPassword();
+
+          iniciarCuentaRegresiva();
+        }else {
+          showNotification(msg, 'error');
+        }
+      } catch (err) {
+        console.error(err);
+        showNotification("Error enviando código.", 'error');
+      } finally {
+        // Habilita nuevamente el botón
+        botonEnviar.disabled = false;
+        botonEnviar.textContent = "Enviar código de recuperación";
+      }
+    });
+
+    
+    function iniciarCuentaRegresiva() {
+      const countdownEl = document.getElementById('countdown');
+      const msgEl = document.getElementById('codigo-expira-msg');
+      msgEl.classList.remove('hidden');
+      const expiration = Number(localStorage.getItem("recoveryExpiration"));
+      // Si ya existe un contador, lo detenemos
+      if (recoveryTimer) {
+          clearInterval(recoveryTimer);
+      }
+        recoveryTimer = setInterval(() => {
+          const restante = Math.floor((expiration - Date.now()) / 1000);
+          if (restante <= 0) {
+              clearInterval(recoveryTimer);
+              recoveryTimer = null;
+
+              // Limpiar toda la recuperación
+              localStorage.removeItem("recoveryExpiration");
+              localStorage.removeItem("correoRecuperacion");
+
+              msgEl.innerHTML =
+                  "<span class='text-red-600'>El código ha expirado. Solicita uno nuevo.</span>";
+
+              return;
+          }
+          const mins = String(Math.floor(restante / 60)).padStart(2, '0');
+          const secs = String(restante % 60).padStart(2, '0');
+          countdownEl.textContent = `${mins}:${secs}`;
+      }, 1000);
+  }
+
+
+// Diccionario de roles para mostrar nombres amigables
+
+  function mostrarModalDesactivado() {
+    document.getElementById("modalDesactivado").classList.remove("hidden");
+  }
+
+  function cerrarModalDesactivado() {
+    document.getElementById("modalDesactivado").classList.add("hidden");
+  }
+
+  const roles = {
+    ADMIN: "Administrador",
+    CLIENT: "Cliente",
+    INTERN: "Practicante",
+    VETERINARIAN: "Veterinario"
+  };
+
+  document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const { correo, contrasena, expectedRole } = e.target;
+
+    localStorage.setItem('correoCliente', correo.value);
+
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ correo: correo.value, password: contrasena.value })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        if (data.rol !== expectedRole.value) {
+          showNotification(`Acceso denegado. Este acceso es para ${roles[expectedRole.value]}, pero has iniciado sesión como ${roles[data.rol]}.`, 'error');
+          return;
+        }
+
+        document.cookie = `jwt=${data.token}; path=/; SameSite=Lax; Secure`;
+
+        const saludo = `¡Bienvenido ${roles[data.rol]} ${data.nombreCompleto || ''}!`;
+        showNotification(saludo, 'success');
+
+        const redirecciones = {
+          CLIENT: '/dashboard',
+          VETERINARIAN: '/vet/veterinarian_dashboard.html',
+          INTERN: '/intern/intern_dashboard.html',
+          ADMIN: '/admin/admin_dashboard.html'
+        };
+        window.location.href = redirecciones[data.rol];
+      } else {
+        if (data.message && data.message.includes("desactivada")) {
+          mostrarModalDesactivado();
+        } else {
+          showNotification(data.error || "Credenciales incorrectas", 'error');
+        }
+      }
+    } catch (err) {
+      showNotification("Error al conectar con el servidor.", 'error');
+      console.error(err);
+    }
+  });
+
+
+    // Mostrar/ocultar contraseña en login
+    const loginPasswordInput = document.getElementById('loginContrasena');
+    const toggleLoginPasswordIcon = document.getElementById('toggleLoginPassword');
+
+    toggleLoginPasswordIcon.addEventListener('click', () => {
+      const type = loginPasswordInput.type === 'password' ? 'text' : 'password';
+      loginPasswordInput.type = type;
+      toggleLoginPasswordIcon.classList.toggle('fa-eye-slash');
+    });
+
+
+    // Registro de cliente con validaciones completas
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Validar campos obligatorios vacíos
+      const requiredInputs = document.querySelectorAll('#registerForm input[required], #registerForm select[required]');
+      for (let input of requiredInputs) {
+        if (!input.value.trim()) {
+          alert("Completa todos los campos antes de enviar.");
+          input.focus();
+          return;
+        }
+      }
+
+      // Validar errores en mensajes <small> que sean de error (id empieza con error-)
+      const errores = document.querySelectorAll('#registerForm small');
+      for (let error of errores) {
+        if (error.id.startsWith('error-') && error.textContent !== "") {
+          alert("Corrige los errores antes de enviar.");
+          return;
+        }
+      }
+
+      // Validar sexo seleccionado
+      const sexoRadios = document.querySelectorAll('input[name="sexo"]');
+      const sexoError = document.getElementById('error-sexo');
+      const seleccionado = Array.from(sexoRadios).some(radio => radio.checked);
+      if (!seleccionado) {
+        sexoError.textContent = "Selecciona un sexo.";
+        alert("Selecciona un sexo antes de enviar.");
+        return;
+      } else {
+        sexoError.textContent = "";
+      }
+
+      // Validar contraseñas iguales
+      const contrasenaInput = document.getElementById('contrasena');
+      const contrasenaConfirmInput = document.getElementById('contrasenaConfirm');
+      if (contrasenaInput.value !== contrasenaConfirmInput.value) {
+        alert("Las contraseñas no coinciden.");
+        return;
+      }
+
+      // Construir body a enviar
+      const formData = new FormData(e.target);
+      const body = Object.fromEntries(formData.entries());
+      body.fechaNacimiento = new Date(body.fechaNacimiento).toISOString().split('T')[0];
+      body.tipoDocumentoId = parseInt(body.tipoDocumentoId);
+
+      // Enviar registro
+      try {
+        const res = await fetch('/api/auth/register/client', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+
+        if (res.ok) {
+          showNotification("🎉 Registro exitoso. Ya puedes iniciar sesión.", "success");
+          limpiarFormularioRegistro();
+          toggleRegister();
+          openLogin('CLIENT');
+        } else {
+          const errorJson = await res.json();
+          showNotification(errorJson.error, 'error');  // Notificación clara y bonita
+        }
+      } catch (err) {
+        alert("Error al conectar con el servidor.");
+        console.error(err);
+      }
+    });
+
+    // Cambiar contraseña
+    document.getElementById('resetPasswordForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const correo = localStorage.getItem("correoRecuperacion");
+      const codigo = document.getElementById('codigoRecuperacion').value.trim();
+      const nuevaContrasena = document.getElementById('nuevaContrasena').value;
+
+      if (!validarNuevaContrasena() || !validarConfirmacionContrasena()) return;
+
+      try {
+        const res = await fetch(`http://localhost:8082/api/password/reset?correo=${encodeURIComponent(correo)}&codigo=${encodeURIComponent(codigo)}&nuevaContrasena=${encodeURIComponent(nuevaContrasena)}`, {
+          method: 'POST'
+        });
+        const msg = await res.text();
+        if (res.ok) {
+            // Limpiar recuperación
+            localStorage.removeItem("correoRecuperacion");
+            localStorage.removeItem("recoveryExpiration");
+
+            showNotification("Contraseña actualizada. Inicia sesión.", 'success');
+
+            toggleResetPassword();
+            toggleLogin();
+
+            document.querySelector('#login-modal input[name="correo"]').value = correo;
+            document.querySelector('#login-modal input[name="contrasena"]').value = '';
+
+        }
+        else {
+          showNotification(msg, 'error');
+        }
+      } catch (err) {
+        console.error(err);
+        showNotification("Error cambiando contraseña.", 'error');
+      }
+    });
+
+    // Validaciones en vivo en reset-password modal
+    document.getElementById('nuevaContrasena').addEventListener('input', validarNuevaContrasena);
+    document.getElementById('confirmarNuevaContrasena').addEventListener('input', validarConfirmacionContrasena);
+
+    function showNotification(mensaje, tipo = 'success') {
+      const container = document.getElementById('toast-container');
+      const colors = {
+        success: 'bg-green-500',
+        error: 'bg-red-500',
+        info: 'bg-blue-500'
+      };
+      const toast = document.createElement('div');
+      toast.className = `${colors[tipo]} text-white px-4 py-2 rounded shadow transition flex items-center gap-2`;
+      toast.innerHTML = `<i class="fa-solid fa-circle-info"></i><span>${mensaje}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => toast.remove(), 3500);
+    }
+
+    function showNotification(mensaje, tipo = "success") { const container = document.getElementById("toast-container"); const colores = { success: "bg-green-500", error: "bg-red-500", info: "bg-blue-500", warning: "bg-yellow-500" }; const iconos = { success: '<i class="fas fa-check-circle"></i>', error: '<i class="fas fa-times-circle"></i>', info: '<i class="fas fa-info-circle"></i>', warning: '<i class="fas fa-exclamation-circle"></i>' }; const toast = document.createElement("div"); toast.className = `${colores[tipo]} text-white px-4 py-3 rounded-lg shadow-lg flex items-center gap-3 animate-fade-in-down`; toast.innerHTML = `${iconos[tipo] || ""}<span>${mensaje}</span>`; container.appendChild(toast); setTimeout(() => { toast.classList.add("animate-fade-out-up"); setTimeout(() => toast.remove(), 500); }, 4000); }
+  </script>
+  <script>
+    function mostrarModalDesactivado() {
+  document.getElementById('modalDesactivado').classList.remove('hidden');
+}
+
+function cerrarModalDesactivado() {
+  document.getElementById('modalDesactivado').classList.add('hidden');
+}
+
+  </script>
+
+  <footer class="bg-teal-800 text-white py-10 mt-16">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+
+      <!-- Contacto -->
+      <div class="space-y-3">
+        <h3 class="font-bold text-lg mb-3">Contacto</h3>
+        <p>Clínica Veterinaria dedicada al cuidado integral de tu mascota.</p>
+        <div class="flex items-center justify-center md:justify-start space-x-2">
+          <i class="fas fa-map-marker-alt text-teal-400"></i>
+          <span>Urb. Pte Blanco J-9, Ica</span>
+        </div>
+        <div class="flex items-center justify-center md:justify-start space-x-2">
+          <i class="fas fa-envelope text-teal-400"></i>
+          <span>puenteblanco.vet@gmail.com</span>
+        </div>
+        <div class="flex items-center justify-center md:justify-start space-x-2">
+          <i class="fas fa-phone-alt text-teal-400"></i>
+          <span>+51 987 654 321</span>
+        </div>
+      </div>
+
+      <!-- Enlaces -->
+      <div>
+        <h3 class="font-bold text-lg mb-3">Enlaces Rápidos</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">Inicio</a></li>
+          <li><a href="#servicios" class="hover:underline">Servicios</a></li>
+          <li><a href="#" class="hover:underline">Contáctanos</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes Sociales -->
+      <div>
+        <h3 class="font-bold text-lg mb-3">Síguenos</h3>
+        <div class="flex justify-center md:justify-start space-x-4">
+          <!-- Facebook -->
+          <a href="https://facebook.com/puenteblanco.vet" target="_blank"
+            class="w-10 h-10 rounded-full bg-[#1877F2] flex items-center justify-center text-white text-xl hover:opacity-80 transition">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/vet.puenteblanco.ica/" target="_blank"
+            class="w-10 h-10 rounded-full bg-[#E1306C] flex items-center justify-center text-white text-xl hover:opacity-80 transition">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <!-- WhatsApp -->
+          <a href="https://wa.me/51987654321" target="_blank"
+            class="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center text-white text-xl hover:opacity-80 transition">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+    <div class="text-center mt-8 text-sm text-black">© 2025 Clínica Veterinaria Puente Blanco. Todos los derechos
+      reservados.</div>
+  </footer>
+
+
+  <!-- AOS Animate on Scroll JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <div id="toast-container" class="fixed top-4 right-4 z-50 space-y-2"></div>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script> AOS.init({ once: true, duration: 800, offset: 100, }); </script>
+<div th:replace="~{fragments/asistente :: ia-asistente('publico')}"></div>
+</body>
+
+</html>
