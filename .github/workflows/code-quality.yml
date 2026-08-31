@@ -69,4 +69,4 @@ jobs:
       - name: Run SonarCloud Scan
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=angelina240_PuenteBlancoVet-grupo-tics
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=angelina240_PuenteBlancoVet-grupo-tics -Dsonar.organization=angelina240
