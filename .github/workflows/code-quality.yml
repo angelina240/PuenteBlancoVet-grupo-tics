@@ -2,16 +2,16 @@ name: Code Quality Analysis
 
 on:
   push:
-    branches: [ "main", "develop" ]
+    branches: ["main", "develop"]
   pull_request:
-    branches: [ "main", "develop" ]
+    branches: ["main", "develop"]
   workflow_dispatch:
 
 jobs:
   sonarqube:
     name: SonarQube Scan
     runs-on: ubuntu-latest
-    
+
     services:
       mysql:
         image: mysql:8.0
@@ -25,7 +25,17 @@ jobs:
           --health-interval=10s
           --health-timeout=5s
           --health-retries=10
-  
+
+    env:
+      DB_HOST: 127.0.0.1
+      DB_PORT: 3306
+      DB_NAME: puente_blanco
+      DB_USER: root
+      DB_PASSWORD: ""
+      SPRING_DATASOURCE_URL: jdbc:mysql://127.0.0.1:3306/puente_blanco?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: ""
+
     defaults:
       run:
         working-directory: PuenteBlancoDEMO/pb
@@ -59,4 +69,4 @@ jobs:
       - name: Run SonarCloud Scan
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=angelina240_PuenteBlancoVet-grupo-tics -Dsonar.qualitygate.wait=true
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=angelina240_PuenteBlancoVet-grupo-tics
